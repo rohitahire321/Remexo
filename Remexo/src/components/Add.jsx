@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://remexo-backend.vercel.app/api";
 const COLLECTIONS = [
   "Rohit's_Special",
   "Party_Songs",

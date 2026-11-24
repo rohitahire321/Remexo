@@ -22,7 +22,7 @@ function App() {
   // Fetch all songs from backend
   const fetchSongs = () => {
     axios
-      .get("http://localhost:5000/api/get")
+      .get("https://remexo-backend.vercel.app/api/get")
       .then((res) => setSongs(res.data))
       .catch((err) => console.log(err));
   };
