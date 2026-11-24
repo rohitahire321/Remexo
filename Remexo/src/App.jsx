@@ -20,7 +20,7 @@ function App() {
   const navigate = useNavigate();
 
   // Fetch all songs from backend
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const API_URL = import.meta.env.VITE_API_URI || "http://localhost:5000";
   const fetchSongs = () => {
     axios
       .get(`${API_URL}/api/get`)
