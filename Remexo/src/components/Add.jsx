@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "https://remexo-backend.vercel.app/api";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 const COLLECTIONS = [
   "Rohit's_Special",
   "Party_Songs",
@@ -37,7 +37,7 @@ export default function Add({ onSongAdded }) {
     setLoading(true);
 
     axios
-      .post(`${API_URL}/add`, formData)
+      .post(`${API_URL}/api/add`, formData)
       .then(() => {
         if (onSongAdded) onSongAdded(); // Refresh songs state in App.jsx
         setFormData({

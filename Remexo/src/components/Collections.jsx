@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "https://remexo-backend.vercel.app/api";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 const COLLECTIONS = [
   "All",
   "Rohit's_Special",
@@ -27,7 +27,7 @@ export default function Collections({ songs = [], onRefresh, showTabs = true }) 
   // Delete song by _id
   const handleDelete = (id) => {
     axios
-      .delete(`${API_URL}/delete/${id}`)
+      .delete(`${API_URL}/api/delete/${id}`)
       .then(() => {
         if (onRefresh) onRefresh();
       })

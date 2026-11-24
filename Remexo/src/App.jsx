@@ -20,9 +20,10 @@ function App() {
   const navigate = useNavigate();
 
   // Fetch all songs from backend
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
   const fetchSongs = () => {
     axios
-      .get("https://remexo-backend.vercel.app/api/get")
+      .get(`${API_URL}/api/get`)
       .then((res) => setSongs(res.data))
       .catch((err) => console.log(err));
   };
